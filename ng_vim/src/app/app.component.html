@@ -182,7 +182,10 @@
 		<pre>{{vimrc}}</pre>
 		
 	</div>
+	<div>
 <button (click)="copyMessage()">copy</button>
+<div *ngIf="hasClicked"> Copy Successful</div>
+	</div>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

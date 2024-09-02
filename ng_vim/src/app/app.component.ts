@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { CommonModule} from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'ng_vim';
+  hasClicked = false;
   vimrc = `
 set encoding=utf-8
 filetype off
@@ -56,5 +57,6 @@ set number
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    this.hasClicked=true;
   }
 }
